@@ -1,153 +1,208 @@
-/* App.module.scss */
 body {
-  display: flex;
-  flex-direction: column;
-  background-color: #010A43;
-}
-
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+  background-color: #0a0a0a;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .app {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 16px;
   text-align: center;
-  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a2e 100%);
 }
 
-.countrySelection {
-  margin-top: 20px;
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
 }
 
-.countrySelection select {
-  padding: 10px;
+.logo {
+  font-size: 80px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 10px;
+}
+
+.home h1 {
+  font-size: 32px;
+  margin: 10px 0;
+}
+
+.subtitle {
+  color: #888;
   font-size: 16px;
+  margin-bottom: 10px;
 }
 
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+.desc {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 30px;
 }
 
-p {
+.connectBtn {
+  background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+  color: white;
+  border: none;
+  padding: 16px 40px;
   font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 30px;
+  transition: transform 0.2s;
+}
+
+.connectBtn:hover {
+  transform: scale(1.05);
+}
+
+.connectBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.walletInfo {
+  background: #1a1a2e;
+  padding: 10px 20px;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  font-size: 14px;
+  color: #00d4ff;
 }
 
 .menu {
-  width: 100%;
-  max-width: 420px;
-  padding: 16px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.menuBtn {
+  background: #1a1a2e;
+  color: #fff;
+  border: 1px solid #333;
+  padding: 20px;
+  font-size: 18px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.menuBtn:hover {
+  background: #2a2a4e;
+  border-color: #00d4ff;
+}
+
+.backBtn {
+  background: transparent;
+  color: #888;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
   position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #192259;
+  top: 10px;
+  left: 10px;
   z-index: 100;
 }
 
-.menu .btn {
-  width: 80px;
-  height: 80px;
-  font-size: 32px;
-  border-color: none !important;
-  border: 0 !important;
+.collection, .mint, .mynfts, .detail {
+  padding: 20px 0;
 }
 
-.icon {
-  font-size: 32px !important;
+.collection h2, .mint h2, .mynfts h2 {
+  margin-bottom: 20px;
 }
 
-.btn:hover {
-  color: #f0c419 !important;
-  border-color: none !important;
-  border: 0 !important;
+.nftGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  width: 100%;
 }
 
-.invisible {
-  visibility: hidden;
-}
-
-.clickButton {
+.nftCard {
+  background: #1a1a2e;
+  border: 1px solid #333;
+  border-radius: 16px;
+  padding: 20px;
   cursor: pointer;
-  width: 60%;
-  max-width: 300px;
-  height: auto;
-  margin-top: 20px;
-  transition: transform 0.1s ease-in-out;
+  transition: all 0.2s;
 }
 
-.clickButton:active {
-  animation: click-animation 0.2s ease-in-out;
+.nftCard:hover {
+  transform: translateY(-5px);
+  border-color: #00d4ff;
 }
 
-@keyframes click-animation {
-  0% {
-    transform: scale(1);
-  }
+.nftCard.basic { border-color: #4ade80; }
+.nftCard.pattern { border-color: #3b82f6; }
+.nftCard.repeat { border-color: #a855f7; }
+.nftCard.premium { border-color: #fbbf24; }
+.nftCard.legendary { border-color: #f472b6; }
 
-  50% {
-    transform: scale(0.97);
-  }
-
-  100% {
-    transform: scale(1);
-  }
+.nftNumber {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
 }
 
-.score {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+.nftTier {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
 }
 
-.scoreImg {
-  width: 20%;
-  height: 20%;
+.nftStyle {
+  font-size: 11px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.nftPrice {
+  font-size: 14px;
+  color: #00d4ff;
+  font-weight: bold;
+}
+
+.nftInfo {
+  background: #1a1a2e;
+  padding: 20px;
+  border-radius: 16px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.nftInfo p {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+.mintBtn {
+  background: linear-gradient(135deg, #00d4ff, #7b2ff7);
+  color: white;
+  border: none;
+  padding: 14px 30px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 15px;
+  transition: transform 0.2s;
+}
+
+.mintBtn:hover {
+  transform: scale(1.05);
 }
